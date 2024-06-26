@@ -1,1 +1,20 @@
 
+links:
+  - text: Haha.local
+    icon: globe
+    link: https://youtu.be/dQw4w9WgXcQ?si=u4f1QBh8HwZpd2ko
+input: .
+output: .retype
+url: docs.justm.site
+edit:
+  repo: https://github.com/JustMouse/SA-Notes
+branding:
+  title: Заметки СиСА
+  label: DOCS
+#links:
+#  - text: Getting Started
+#    link: https://retype.com/guides/getting-started/
+footer:
+  copyright: "Контакты: [Телеграм](https://t.me/JustMouse). &copy; Copyright . All rights reserved."
+cache:
+  busting: query
