@@ -1,0 +1,29 @@
+name: Publish Retype powered website to GitHub Pages
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    name: Publish to retype branch
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: retypeapp/action-build@latest
+
+      - name: Add gtag.js
+        shell: bash
+        run: |
+          find . -name '*.html' -exec sed -i "s@<head>@<head><!-- Google tag (gtag.js) --><script async src=\"https://www.googletagmanager.com/gtag/js?id=G-CTQFQQMY65\"></script><script>  window.dataLayer = window.dataLayer || [];  function gtag(){dataLayer.push(arguments);}  gtag('js', new Date());  gtag('config', 'G-CTQFQQMY65');</script>@g" {} +; retype build --verbose --override
+
+      - uses: retypeapp/action-github-pages@latest
+        with:
+          update-branch: true
