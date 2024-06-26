@@ -1,7 +1,7 @@
 
 links:
   - text: Haha.local
-    icon: :robot_face:
+    icon: globe
     link: https://youtu.be/dQw4w9WgXcQ?si=u4f1QBh8HwZpd2ko
 input: .
 output: .retype
