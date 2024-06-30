@@ -1,4 +1,4 @@
-[[Шпора]]
+
 Minecraft server 
 apt install docker.io ( dnf install docker-ce)
 
