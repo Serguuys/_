@@ -1,4 +1,4 @@
-[[Шпора]]
+
 /etc/bashrc
 ```shell
 ssh() {
