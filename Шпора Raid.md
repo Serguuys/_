@@ -1,4 +1,5 @@
 1. Скачиваем пакет `mdadm`
+#смотретб сайт https://www.dmosk.ru/miniinstruktions.php?mini=mdadm
 ```bash
 apt install mdadm
 ```
