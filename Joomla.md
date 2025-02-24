@@ -44,3 +44,4 @@ user@alt /etc/php/X.X/apache2-mod_php/php.ini
 user@alt output_buffering = off
 user@alt systemctl restart httpd2
 ```
+user@alt who am i
