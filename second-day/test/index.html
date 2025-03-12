@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795099713434">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795100089509">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Test</title>
     <meta name="title" content="Test">
-    <meta name="description" content="asdasd">
+    <meta name="description" content="RAID lsblk (показывает все диски какие у нас имеются) mdadm - -create /dev/md0 -l 1 -n 2 /dev/sdb /dev/sdc">
 
     <!-- Canonical -->
     <link rel="canonical" href="/second-day/test/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/second-day/test/">
     <meta property="og:title" content="Test">
-    <meta property="og:description" content="asdasd">
+    <meta property="og:description" content="RAID lsblk (показывает все диски какие у нас имеются) mdadm - -create /dev/md0 -l 1 -n 2 /dev/sdb /dev/sdc">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/second-day/test/">
     <meta property="twitter:title" content="Test">
-    <meta property="twitter:description" content="asdasd">
+    <meta property="twitter:description" content="RAID lsblk (показывает все диски какие у нас имеются) mdadm - -create /dev/md0 -l 1 -n 2 /dev/sdb /dev/sdc">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795099713434" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795100089509" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795099713434" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795100089509" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795099713434" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795100089509" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -183,7 +183,23 @@
         <span>Test</span>
     </h1>
 </doc-anchor-target>
-<p>asdasd</p>
+<p><strong>RAID</strong>
+lsblk (показывает все диски какие у нас имеются)
+mdadm - -create /dev/md0 -l 1 -n 2 /dev/sdb /dev/sdc
+/dev/md0 - название
+-l - это level raid
+-n - количество дисков
+Continue creating array? <em>Yes</em>
+mdadm  - -detail /dev/md0 проверка
+mkdir /opt/data
+mkfs.xfs /dev/md0 создание xfs
+blkid /dev/md0 для просмотра id диска
+cp /etc/fstab /etc/fstab_bak резерв
+blkid /dev/md0 &gt;&gt; /etc/fstab
+nano /etc/fstab</p>
+<p>UUID=asdas091432naffa  /opt/data	xfs	defaults	0 0
+systemctl daemon-reload
+mount -a</p>
 
                                 
                                 <!-- Required only on API pages -->
