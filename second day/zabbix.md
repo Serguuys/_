@@ -46,17 +46,17 @@ nano /var/lib/pgsql/13/data/pg_hba.conf
 
 local   all             all                                     peer
 
-# IPv4 local connections:
+ IPv4 local connections:
 
 host    all             all             127.0.0.1/32            md5
 
-# IPv6 local connections:
+ IPv6 local connections:
 
 host    all             all             ::1/128                 md5
 
-# Allow replication connections from localhost, by a user with the
+ Allow replication connections from localhost, by a user with the
 
-# replication privilege.
+ replication privilege.
 
 local   replication     all                                     peer
 
