@@ -29,6 +29,7 @@ nano /etc/fstab
 
 
 UUID=asdas091432naffa  /opt/data	xfs	defaults	0 0
+
 systemctl daemon-reload
 
 mount -a
