@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795100807599">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795100849762">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Nginx</title>
     <meta name="title" content="Nginx">
-    <meta name="description" content="Первым делом надо скачать nginx Dnf install nginx Дальше заходим в директорию где будут лежать наши файлики">
+    <meta name="description" content="Первым делом надо скачать nginx">
 
     <!-- Canonical -->
     <link rel="canonical" href="/second-day/nginx/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/second-day/nginx/">
     <meta property="og:title" content="Nginx">
-    <meta property="og:description" content="Первым делом надо скачать nginx Dnf install nginx Дальше заходим в директорию где будут лежать наши файлики">
+    <meta property="og:description" content="Первым делом надо скачать nginx">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/second-day/nginx/">
     <meta property="twitter:title" content="Nginx">
-    <meta property="twitter:description" content="Первым делом надо скачать nginx Dnf install nginx Дальше заходим в директорию где будут лежать наши файлики">
+    <meta property="twitter:description" content="Первым делом надо скачать nginx">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795100807599" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795100849762" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795100807599" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795100849762" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795100807599" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795100849762" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -183,62 +183,65 @@
         <span>Nginx</span>
     </h1>
 </doc-anchor-target>
-<p>Первым делом надо скачать nginx
-Dnf install nginx
-Дальше заходим в директорию где будут лежать наши файлики
-Cd /opt/data
-Создаем файл index.html в котором напишем слова которые будут у нас на сайте
-Touch index.html
-Nano index.html
-Внутри него пишем
-<meta charset=”utf-8”></p>
+<p>Первым делом надо скачать nginx</p>
+<p>Dnf install nginx</p>
+<p>Дальше заходим в директорию где будут лежать наши файлики</p>
+<p>Cd /opt/data</p>
+<p>Создаем файл index.html в котором напишем слова которые будут у нас на сайте</p>
+<p>Touch index.html</p>
+<p>Nano index.html</p>
+<p>Внутри него пишем</p>
+<meta charset=”utf-8”>
 <html>
- <h1>добро пожаловать на корпоративный портал компании destination reachable</h1>
- <img src=”logo.svg” alt=”профессионалы”>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&lt;h1&gt;добро пожаловать на корпоративный портал компании destination reachable&lt;/h1&gt;</code></pre>
+</doc-codeblock></div>
+<p><img sr
+c=”logo.svg” alt=”профессионалы”></p>
 </html>
-Сохраняем и выходим
-Дальше нам надо сделать логотип професионалов чтобы отображалось на сайте
-Переходим на сайт http://pro.firpo.ru
-Нажимаем на верхнюю картинку открыть в новом окне и запоминаем его ссылку
-Переходим в папку /opt/data и пишем
-Wget https://pro.firpo.ru/tm/tm_4/assets/img/logo.svg
-Теперь у нас будет картинка на сайте
-Настроиваем lighttpd для реверс прокси
-Dnf install lighttpd
-Nano /etc/ligghtpd/lighttpd.conf
-В файле меняем параметры под нас
-(порт, стираем все до run, указываем /opt/data) порт 81
-Дальше нам надо настроить конфиг nginx
-Заходим в конфиг 
-Nano /etc/nginx/nginx.conf
-Удаляем все внизу после строчек с http
-И пишем свое
-Server {
-	listen 80;
-	Server_name _;
-	Return 404;
-}
-<p>Server {
-Listen 80;
-Server_name corp.jun.profi;
-Location / {
-Proxy_pass <a href="http://127.0.0.1:81">http://127.0.0.1:81</a>
-Proxy_set_header X-Real-IP $remote_addr;
-Proxy_set_header X-Forwarded-For $reemote_addr;
-Proxy_set_header Host $host;
-Proxy_set_header X-Forwarded-Port $server_port;
-}
-}
-}
-Даем chmod и chown для папки
-Chown -R lighttpd:lighttpd /opt/data
-Chmod -R 0755 /opt/data
-Дальше пишем команду после которой у меня все заработало
-Restorecon -Rv
-Также надо отключить selinux
-Nano /etc/selinux
-Selinux=permissive
-И навсякий случай setenforce 0</p>
+<p>Сохраняем и выходим</p>
+<p>Дальше нам надо сделать логотип професионалов чтобы отображалось на сайте</p>
+<p>Переходим на сайт <a href="http://pro.firpo.ru">http://pro.firpo.ru</a></p>
+<p>Нажимаем на верхнюю картинку открыть в новом окне и запоминаем его ссылку</p>
+<p>Переходим в папку /opt/data и пишем</p>
+<p>Wget <a href="https://pro.firpo.ru/tm/tm_4/assets/img/logo.svg">https://pro.firpo.ru/tm/tm_4/assets/img/logo.svg</a></p>
+<p>Теперь у нас будет картинка на сайте</p>
+<p>Настроиваем lighttpd для реверс прокси</p>
+<p>Dnf install lighttpd</p>
+<p>Nano /etc/ligghtpd/lighttpd.conf</p>
+<p>В файле меняем параметры под нас</p>
+<p>(порт, стираем все до run, указываем /opt/data) порт 81</p>
+<p>Дальше нам надо настроить конфиг nginx</p>
+<p>Заходим в конфиг</p>
+<p>Nano /etc/nginx/nginx.conf</p>
+<p>Удаляем все внизу после строчек с http</p>
+<p>И пишем свое</p>
+<p>Server {</p>
+<p>listen 80;</p>
+<p>Server_name _;</p>
+<p>Return 404;
+}</p>
+<p>Server {</p>
+<p>Listen 80;</p>
+<p>Server_name corp.jun.profi;</p>
+<p>Location / {</p>
+<p>Proxy_pass <a href="http://127.0.0.1:81">http://127.0.0.1:81</a></p>
+<p>Proxy_set_header X-Real-IP $remote_addr;</p>
+<p>Proxy_set_header X-Forwarded-For $reemote_addr;</p>
+<p>Proxy_set_header Host $host;</p>
+<p>Proxy_set_header X-Forwarded-Port $server_port;
+}</p>
+<p>}</p>
+<p>}</p>
+<p>Даем chmod и chown для папки</p>
+<p>Chown -R lighttpd:lighttpd /opt/data</p>
+<p>Chmod -R 0755 /opt/data</p>
+<p>Дальше пишем команду после которой у меня все заработало</p>
+<p>Restorecon -Rv</p>
+<p>Также надо отключить selinux</p>
+<p>Nano /etc/selinux</p>
+<p>Selinux=permissive</p>
+<p>И навсякий случай setenforce 0</p>
 
                                 
                                 <!-- Required only on API pages -->
