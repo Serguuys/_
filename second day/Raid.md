@@ -9,6 +9,7 @@ mdadm - -create /dev/md0 -l 1 -n 2 /dev/sdb /dev/sdc
   -l - это level raid 
   
   -n - количество дисков 
+
 Continue creating array? _Yes_
 
 mdadm  - -detail /dev/md0 проверка
