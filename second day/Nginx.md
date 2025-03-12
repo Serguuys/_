@@ -19,8 +19,7 @@ Nano index.html
 <html>
 
 	<h1>добро пожаловать на корпоративный портал компании destination reachable</h1>
- <img sr
-	 c=”logo.svg” alt=”профессионалы”>
+ <img src=”logo.svg” alt=”профессионалы”>
 </html>
 
 
