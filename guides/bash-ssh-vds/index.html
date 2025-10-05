@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813008684382">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813009527818">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Bash ssh VDS</title>
     <meta name="title" content="Bash ssh VDS">
-    <meta name="description" content="/etc/bashrc">
+    <meta name="description" content="Небольшой гайд для подключения к вашему серверу через ssh по команде:">
 
     <!-- Canonical -->
     <link rel="canonical" href="/guides/bash-ssh-vds/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/guides/bash-ssh-vds/">
     <meta property="og:title" content="Bash ssh VDS">
-    <meta property="og:description" content="/etc/bashrc">
+    <meta property="og:description" content="Небольшой гайд для подключения к вашему серверу через ssh по команде:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/guides/bash-ssh-vds/">
     <meta property="twitter:title" content="Bash ssh VDS">
-    <meta property="twitter:description" content="/etc/bashrc">
+    <meta property="twitter:description" content="Небольшой гайд для подключения к вашему серверу через ssh по команде:">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.813008684382" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.813009527818" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813008684382" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813009527818" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813008684382" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813008684382" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813009527818" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813009527818" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -184,17 +184,25 @@
         <span>Bash ssh VDS</span>
     </h1>
 </doc-anchor-target>
-<p>/etc/bashrc</p>
+<p>Небольшой гайд для подключения к вашему серверу через ssh по команде:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">ssh VDS</code></pre>
+</doc-codeblock></div>
+<ol>
+<li>Нам надо зайти в файлик <em>/etc/bashrc</em> и в конце файла дописать небольшую функцию</li>
+</ol>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">ssh() {
     if [[ $@ == &quot;VDS&quot;]]; then
-        command ssh -p 2202 user@
+        command ssh  user@ip-address
     else 
         command ssh $@
     fi
 }</code></pre>
 </doc-codeblock></div>
-<p><strong><a href="mailto:user@100.99.90.101">user@100.99.90.101</a></strong></p>
+<ol start="2">
+<li>После этого нам надо перезайти в терминал или перезайти под пользователем</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
