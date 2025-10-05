@@ -17,3 +17,9 @@ update-initramfs -u # Если работает)
 ```fstab
 /dev/md0 /mnt/ ext4 defaults 0 0
 ```
+5. Чтобы посмотреть статусы используем эту команду
+```bash
+sudo mdadm --detail /dev/md0
+cat /proc/mdstat
+```
+
