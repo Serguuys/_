@@ -1,13 +1,29 @@
 
-Minecraft server 
-apt install docker.io ( dnf install docker-ce)
-
-``` bash
-Docker run -d -p 25565:25565 --volume '/opt/mc/data:/data' --restart always -e EULA=true --name mc-junprofi itzg/minecraft-server 
-
-nano /opt/mc/data/server.properties 
-
-docker restart mc-junprofi
+Для того чтобы поднять майнкрафт сервер с помощью докера нам надо:
+1. Скачать docker через пакетный менеджер apt
+```bash
+apt install docker.io
 ```
-
-
+ Через пакетный менеджер dnf
+```bash
+ dnf install docker-ce
+```
+2. Запускаем контейнер с образом из интернета и указываем для него параметры
+``` bash
+Docker run -d -p 25565:25565 --volume '/opt/mc/data:/data' --restart always -e EULA=true --name myServer itzg/minecraft-server 
+```
+-d - отвечает за запуск в фоне
+-p - указываем порт для нашего сервера 
+--volume - указываем где будут храниться данные сервера 
+--restart указываем что контейнер будет сам подниматься после перезагрузки
+-e отвечает за правила (возможно)
+--name - указываем имя нашему контейнеру
+3. После запуска нам надо настроить параметры для нашего сервера, заходим в файл и меняем нужные нам параметры
+```
+nano /opt/mc/data/server.properties 
+```
+3. В конце перезагружаем контейнер чтобы применились наши настройки 
+```
+docker restart myServer
+```
+Вот и все, теперь заходим в майнкрафт и указываем айпи сервера и порт для подключения к серверу 
