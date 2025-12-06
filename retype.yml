@@ -5,8 +5,8 @@ links:
     link: https://youtu.be/dQw4w9WgXcQ?si=u4f1QBh8HwZpd2ko
 input: .
 output: .retype
-edit:
-  repo: https://github.com/Serguuys/_
+#edit:
+  #repo: https://github.com/Serguuys/_
 branding:
   title: Документация
   label: DOCS
