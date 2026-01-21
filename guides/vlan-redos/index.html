@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.822330302976">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.822330394436">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.822330302976" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.822330394436" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.822330302976" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.822330394436" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.822330302976" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.822330394436" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -183,26 +183,11 @@
         <span>Vlan redos</span>
     </h1>
 </doc-anchor-target>
-<p>1.      Заходим в nmtui и видим что у нас есть 2 интерфейса (один смотрит в сторону интернета, другой в локальную сеть)</p>
-<p><figure class="content-center">
-    <img src="_/img/clip_image002.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p>2.      Интерфейс который смотрит в локальную сеть мы не трогаем, так как на нем будут висеть вланы
-3.      Нажимаем Кнопку &lt;Добавить&gt; и листаем вниз до пункта vlan</p>
-<p><figure class="content-center">
-    <img src="_/img/clip_image004.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p>4.      В открывшемся окне пишем в поле устройство (vlan2000) в поле Родительский мы указываем ens, который смотрит в сторону локальной сети у меня это (ens4) в поле Идентификатор VLAN у нас автоматически появится 2000, так как мы в поле устройство указали уже нужный нам vlan. Дальше добавляем айпи и в конечном итоге у нас должно получиться вот так:</p>
-<p><figure class="content-center">
-    <img src="_/img/clip_image006.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<p>5.      Также создаем и остальные вланы, меняя vlan2000 на vlan2010, vlan2020</p>
+<p>1.      Заходим в nmtui и видим что у нас есть 2 интерфейса (один смотрит в сторону интернета, другой в локальную сеть)
+2.      Интерфейс который смотрит в локальную сеть мы не трогаем, так как на нем будут висеть вланы
+3.      Нажимаем Кнопку &lt;Добавить&gt; и листаем вниз до пункта vlan
+4.      В открывшемся окне пишем в поле устройство (vlan2000) в поле Родительский мы указываем ens, который смотрит в сторону локальной сети у меня это (ens4) в поле Идентификатор VLAN у нас автоматически появится 2000, так как мы в поле устройство указали уже нужный нам vlan. Дальше добавляем айпи и в конечном итоге у нас должно получиться вот так:
+5.      Также создаем и остальные вланы, меняя vlan2000 на vlan2010, vlan2020</p>
 
                                 
                                 <!-- Required only on API pages -->
